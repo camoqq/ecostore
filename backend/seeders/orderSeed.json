@@ -1,0 +1,12 @@
+[
+  {
+    "orderDate": "October 3, 2024",
+    "products": [
+      {
+        "name": "Organic Olive Oil",
+        "price": 15,
+        "image": "./image"
+      }
+    ]
+  }
+]
