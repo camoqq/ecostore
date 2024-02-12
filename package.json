@@ -2,9 +2,9 @@
   "name": "ecostore",
   "version": "1.0.0",
   "description": "",
-  "main": "backend/server.js",
+  "main": "backend/index.js",
   "scripts": {
-    "start": "node backend/server.js --ignore frontend",
+    "start": "node backend/index.js --ignore frontend",
     "dev": "concurrently \"cd backend && npm run start\" \"cd frontend && npm run dev\"",
     "install": "cd backend && npm i && cd ../frontend && npm i",
     "seed": "cd backend && npm run seed",
