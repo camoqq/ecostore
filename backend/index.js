@@ -6,6 +6,7 @@ const getOrders = require("./routes/orderRoutes");
 const funcs = require("./middleware/errorMiddleware");
 const PORT = 5000;
 const app = express();
+const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
 app.use(express.urlencoded({ extended: true }));

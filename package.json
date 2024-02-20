@@ -3,20 +3,30 @@
   "version": "1.0.0",
   "description": "",
   "main": "backend/index.js",
+  "npm": "backend/index.js",
+  "proxy": "http://localhost:5000",
   "scripts": {
-    "start": "node backend/index.js --ignore frontend",
-    "dev": "concurrently \"cd backend && npm run start\" \"cd frontend && npm run dev\"",
-    "install": "cd backend && npm i && cd ../frontend && npm i",
-    "seed": "cd backend && npm run seed",
-    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
+    "start": "node backend/index.js",
+    "server": "nodemon backend/index.js",
+    "client": "npm run dev --prefix frontend",
+    "both": "concurrently \"npm run server\" \"npm run client\"",
+    "seed": "cd backend && npm run seed"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^8.2.0"
+    "concurrently": "^8.2.0",
+    "nodemon": "^2.0.22"
   },
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^7.0.2",
     "serve": "^14.2.1"
   }
 }
