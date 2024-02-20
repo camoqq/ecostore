@@ -11,6 +11,14 @@ const cookieParser = require("cookie-parser");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(
+  cors({
+    origin: ["https://deploy-mern-1whq.vercel.app"],
+    methods: ["POST", "GET", "UPDATE"],
+    credentials: true,
+  })
+);
+
 app.get("/", async (req, res) => {
   res.send("index");
 });
@@ -23,6 +31,18 @@ app.use("/orders", getOrders);
 
 app.use(funcs.notFound);
 app.use(funcs.errorHandler);
+
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(__dirname, "/frontend/build")));
+
+//   app.get("*", (req, res) =>
+//     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+//   );
+// } else {
+//   app.get("/", (req, res) => {
+//     res.send("API is running....");
+//   });
+// }
 
 db.once("open", () => {
   app.listen(PORT, () => {
