@@ -4,7 +4,6 @@
   "description": "",
   "main": "backend/index.js",
   "npm": "backend/index.js",
-  "proxy": "http://localhost:5000",
   "scripts": {
     "start": "node backend/index.js",
     "server": "nodemon backend/index.js",

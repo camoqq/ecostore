@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: ["https://deploy-mern-1whq.vercel.app"],
+    origin: ["https://ecostore-ten.vercel.app"],
     methods: ["POST", "GET", "UPDATE"],
     credentials: true,
   })
